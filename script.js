@@ -14,7 +14,7 @@ btn = document.querySelector('#speed')
 
 let mercurySpd = 8.7
 let venusSpd = 22.4
-let moonSpd = 2
+let moonSpd = 3.5
 let earthSpd = 36.5
 let marsSpd = 68.6
 let jupiterSpd = 100
@@ -46,22 +46,23 @@ function solarTime(speed)
         if (day > 29) {month += 1;  day = 1}
         else if (month > 12) {year += 1;  month = 1}
 
-        if (String(day).length == 1 && String(month).length == 1) time = `0${day} / 0${month} / ${year}`
-        else if (String(day).length == 1) time = `0${day} / ${month} / ${year}`
-        else if (String(month).length == 1) time = `${day} / 0${month} / ${year}`
-        else  time = `${day} / ${month} / ${year}`
+        time = setDate(day, month, year)
 
         date.textContent = time
         day++
 
-        if (btn.textContent == 'x1') 
+        if (btn.textContent == 'x1')
             day+=1
 
     }, speed)
-    console.log(speed);
 }
 
-
+function setDate(day, month, year) {
+    if (String(day).length == 1 && String(month).length == 1) return `0${day} / 0${month} / ${year}`
+        else if (String(day).length == 1) return `0${day} / ${month} / ${year}`
+        else if (String(month).length == 1) return `${day} / 0${month} / ${year}`
+        else  return `${day} / ${month} / ${year}`
+}
 
 function speeder() {
 
@@ -77,8 +78,6 @@ function speeder() {
             document.documentElement.style.setProperty('--uranusSpd', `${Math.round(uranusSpd)}s`)
             document.documentElement.style.setProperty('--neptuneSpd', `${Math.round(neptuneSpd)}s`)
 
-
-
             btn.textContent = 'x2'
             solarTime(SPEED)
             break;
@@ -92,7 +91,7 @@ function speeder() {
             document.documentElement.style.setProperty('--saturnSpd', `${Math.round(saturnSpd) / 2}s`)
             document.documentElement.style.setProperty('--uranusSpd', `${Math.round(uranusSpd) / 2}s`)
             document.documentElement.style.setProperty('--neptuneSpd', `${Math.round(neptuneSpd) / 2}s`)
-        
+
             btn.textContent = 'x3'
             solarTime(Math.round(SPEED / 2))
             break;
@@ -175,14 +174,24 @@ function speeder() {
 
 
 
-time = `${day} / ${month} / ${year}`
+time = setDate(day, month, year)
 date.textContent = time
+
+n = 1
+let id_ = setInterval(() => {
+    date.style.opacity = 0
+
+    setTimeout(() => {
+        date.style.opacity = 1
+    }, 700)
+}, 1500)
 
 // Game on \\
 setTimeout(() => {
+    clearInterval(id_)
     start()
     solarTime(SPEED)
 
-}, 3000)
+}, 4000)
 
 

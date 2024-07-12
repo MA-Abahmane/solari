@@ -31,7 +31,6 @@ reuse throughout your stylesheet */
     --neptuneSpd: 0;
 }
 
-
 /* Page default zoom size */
 #body {
     zoom: 110%;
@@ -402,4 +401,8 @@ body {
     justify-content: center;
     border: 5px solid #ededed;
     border-radius: 30px;
+}
+
+.object:hover, .menu {
+    width: 10%;
 }
