@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', 'sans-serif';
     scroll-behavior: smooth;
-    transition: 1s ease-in-out;
+    transition: 0.2s ease-out;
 
 }
 
@@ -43,7 +43,9 @@ html {
 }
 
 body {
-    background-color: black;
+    background: url('assets/GalaxyBg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
     color: var(--text-color);
     transition: 1s ease-in-out;
 }
@@ -307,7 +309,7 @@ body {
     0 0 0 10px #44b1ff11;
 }
 
-/* Mars */
+/* neptune */
 .neptune::before {
     top: 7.9em;
     right: 8.4em;
@@ -351,6 +353,21 @@ body {
     height: 9%;
     background-color: #4d4f5172;
     border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+image {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .speeder {
@@ -403,6 +420,52 @@ body {
     border-radius: 30px;
 }
 
-.object:hover, .menu {
+
+#Mercury:hover {
+    border-top: 7px  solid #aca3a3;
+    border-bottom: 7px  solid #aca3a3;
+}
+
+#Venus:hover {
+    border-top: 7px  solid #eac224af;
+    border-bottom: 7px  solid #eac224af;
+}
+
+#Earth:hover {
+    border-top: 7px  solid royalblue;
+    border-bottom: 7px  solid royalblue;
+}
+
+#Moon:hover {
+    border-top: 7px  solid #c5c5c5;
+    border-bottom: 7px  solid #c5c5c5;
+}
+
+#Mars:hover {
+    border-top: 7px  solid #cf4303;
+    border-bottom: 7px  solid #cf4303;
+}
+
+#Jupiter:hover {
+    border-top: 7px  solid #e8c78b;
+    border-bottom: 7px  solid #e8c78b;
+}
+
+#Saturn:hover {
+    border-top: 7px  solid #f5deb3;
+    border-bottom: 7px  solid #f5deb3;
+}
+
+#Uranus:hover {
+    border-top: 7px  solid #44b1ff;
+    border-bottom: 7px  solid #44b1ff;
+}
+
+#Neptune:hover {
+    border-top: 7px  solid #0e4affe0;
+    border-bottom: 7px  solid #0e4affe0;
+}
+
+.object:checked > .menu {
     width: 10%;
 }
