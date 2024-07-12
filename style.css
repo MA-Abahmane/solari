@@ -383,13 +383,18 @@ image {
     justify-content: center;
     overflow: hidden;
     z-index: 2;
+    background: rgb(2,0,36);
+background: linear-gradient(261deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 .speeder button {
     width: 90%;
     height: 90%;
-    font-size: 20px;
+    font-size: 22px;
     font-family: roboto;
+    background: rgb(2,0,36);
+background: linear-gradient(261deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    color: white;
 }
 
 .timer {
@@ -397,7 +402,7 @@ image {
     top: 10px;
     right: 70px;
     width: 300px;
-    height: 50px;
+    height: 52px;
     background-color: transparent;
     border-radius: 20px;
     display: flex;
@@ -406,6 +411,8 @@ image {
     overflow: hidden;
     z-index: 3;
 }
+
+
 
 #date {
     width: 90%;
@@ -416,8 +423,11 @@ image {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
     border: 5px solid #ededed;
-    border-radius: 30px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    border-radius: 50px;
+    
 }
 
 
